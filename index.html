@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughtful Diary</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="container">
+        <div id="loginPage" class="page">
+            <div class="login-container">
+                <div class="card card-hover">
+                    <div class="card-header">
+                        <h1 class="card-title gradient-text">
+                            <i class="fas fa-book-open"></i>
+                            Thoughtful Diary
+                        </h1>
+                    </div>
+                    <div class="card-content">
+                        <form id="loginForm" class="space-y-4">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" placeholder="Username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="button button-primary button-hover">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Sign In
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="homePage" class="page" style="display: none;">
+            <header class="app-header">
+                <h1 id="welcomeMessage" class="gradient-text"></h1>
+                <div class="header-buttons">
+                    <button id="themeToggle" class="button button-outline button-hover">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button id="logoutButton" class="button button-outline button-hover">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </header>
+
+            <div class="grid">
+                <div class="card card-hover">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-plus"></i>
+                            New Entry
+                        </h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="input-group">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="entryDate">
+                        </div>
+                        <textarea id="entryContent" placeholder="What's on your mind?" rows="7"></textarea>
+                        <button id="addEntryButton" class="button button-primary button-hover">
+                            <i class="fas fa-plus"></i>
+                            Add Entry
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card card-hover">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-calendar-alt"></i>
+                            Calendar
+                        </h2>
+                    </div>
+                    <div class="card-content">
+                        <div id="calendar" class="calendar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entries-header">
+                <h2 class="gradient-text">Your Entries</h2>
+                <button id="shareButton" class="button button-outline button-hover">
+                    <i class="fas fa-share"></i>
+                    Share Diary
+                </button>
+            </div>
+
+            <div id="entriesList" class="entries-list"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
